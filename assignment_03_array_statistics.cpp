@@ -40,5 +40,67 @@
 // =============================================================================
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
+double calculate_sum(const vector<int>& numbers) {
+    double total = 0;
+    for (int num : numbers) {
+        total = total + num;
+    }
+    return total;
+}
+
+double calculate_average(const vector<int>& numbers) {
+    double total = calculate_sum(numbers);
+    int count = numbers.size();
+    double average = total / count;
+    return average;
+}
+
+int calculate_max(const vector<int>& numbers) {
+    int max_value = numbers[0];
+    for (int num : numbers) {
+        if (num > max_value) {
+            max_value = num;
+        }
+    }
+    return max_value;
+}
+
+int calculate_min(const vector<int>& numbers) {
+    int min_value = numbers[0];
+    for (int num : numbers) {
+        if (num < min_value) {
+            min_value = num;
+        }
+    }
+    return min_value;
+}
+
+int main() {
+    int n;
+    cout << "How many numbers? ";
+    cin >> n;
+
+    vector<int> numbers;
+    for (int i = 0; i < n; i++) {
+        int num;
+        cout << "Enter number " << (i + 1) << ": ";
+        cin >> num;
+        numbers.push_back(num);
+    }
+
+    double total = calculate_sum(numbers);
+    double avg = calculate_average(numbers);
+    int max_val = calculate_max(numbers);
+    int min_val = calculate_min(numbers);
+
+    cout << "Results:" << endl;
+    cout << "Sum: " << total << endl;
+    cout << "Average: " << avg << endl;
+    cout << "Maximum: " << max_val << endl;
+    cout << "Minimum: " << min_val << endl;
+
+    return 0;
+}
