@@ -73,10 +73,6 @@
 #include <cmath>
 using namespace std;
 
-#include <iostream>
-#include <cmath>
-using namespace std;
-
 double add(double a, double b) {
     return a + b;
 }
