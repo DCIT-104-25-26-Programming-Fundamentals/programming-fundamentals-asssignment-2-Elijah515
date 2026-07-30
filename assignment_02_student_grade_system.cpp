@@ -46,3 +46,34 @@
 #include <iostream>
 using namespace std;
 
+char get_grade(int score) {
+    if (score < 0 || score > 100) {
+        return '?';  // used as a stand-in for Python's None
+    } else if (score >= 80) {
+        return 'A';
+    } else if (score >= 70) {
+        return 'B';
+    } else if (score >= 60) {
+        return 'C';
+    } else if (score >= 50) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+}
+
+int main() {
+    int score;
+    cout << "Enter student score (0-100): ";
+    cin >> score;
+
+    char result = get_grade(score);
+
+    if (result == '?') {
+        cout << "Error: Score must be between 0 and 100." << endl;
+    } else {
+        cout << "GRADE:" << result << endl;
+    }
+
+    return 0;
+}
