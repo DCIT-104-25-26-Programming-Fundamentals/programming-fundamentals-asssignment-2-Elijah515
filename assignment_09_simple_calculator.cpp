@@ -93,7 +93,7 @@ bool divide(double a, double b, double &result) {
     return true;
 }
 
-double modulus(double a, double b) {
+double modulusOperation(double a, double b) {
     return fmod(a, b);
 }
 
@@ -142,4 +142,14 @@ int main() {
                     cout << "Result: " << num1 << " / " << num2 << " = " << result << endl;
                 }
             } else if (choice == 5) {
-                cout << "Result: " << num1 << " % " << num2 << " = " << modulus(num1, num2) << endl;
+                cout << "Result: " << num1 << " % " << num2 << " = " << modulusOperation(num1, num2) << endl;
+            } else if (choice == 6) {
+                cout << "Result: " << num1 << " ^ " << num2 << " = " << exponent(num1, num2) << endl;
+            }
+        } else {
+            cout << "Error: Invalid choice. Please enter a number between 1 and 7." << endl;
+        }
+    }
+
+    return 0;
+}
